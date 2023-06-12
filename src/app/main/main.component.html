@@ -1,0 +1,15 @@
+<div class="main">
+    <div class="search">
+        Enter Participand Id: <input type="text" [(ngModel)]="participantId">
+        <button (click)="search()">Search</button> 
+    </div>
+    <div class="result" *ngIf="response">
+        <p>Name: {{response.name}}</p>
+        <p>Status: {{response.status}}</p>
+        <p>Episodes:</p>
+        <ul>
+            <li *ngFor="let episode of response.episode"><a href="{{episode}}">{{episode}}</a></li>
+        </ul>
+        <img src="{{response.image}}" alt="Image">
+    </div>    
+</div>
